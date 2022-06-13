@@ -34,11 +34,11 @@ export const Sidebar = ({ checkBoxHandler, filtersArr, ClearFilter }) => {
           <ul id="" className="py-2 space-y-2 ml-4">
             {filters
               .filter((filt) => filt.filterType === "brands")
-              .map((data) => {
+              .map(({title}) => {
                 return (
                   <InputComp
-                  key={data.title}  
-                  data={data}
+                  key={title}  
+                  title={title}
                     filtersArr={filtersArr}
                     checkBoxHandler={checkBoxHandler}
                   />
@@ -63,11 +63,11 @@ export const Sidebar = ({ checkBoxHandler, filtersArr, ClearFilter }) => {
           <ul id="" className="py-2 space-y-2 ml-4">
             {filters
               .filter((filt) => filt.filterType === "cpu")
-              .map((data) => {
+              .map(({title}) => {
                 return (
                   <InputComp
-                  key={data.title}  
-                  data={data}
+                  key={title}  
+                  title={title}
                     filtersArr={filtersArr}
                     checkBoxHandler={checkBoxHandler}
                   />
@@ -92,11 +92,11 @@ export const Sidebar = ({ checkBoxHandler, filtersArr, ClearFilter }) => {
           <ul id="" className="py-2 space-y-2 ml-4">
             {filters
               .filter((filt) => filt.filterType === "ram")
-              .map((data) => {
+              .map(({title}) => {
                 return (
                   <InputComp
-                  key={data.title}  
-                  data={data}
+                  key={title}  
+                  title={title}
                     filtersArr={filtersArr}
                     checkBoxHandler={checkBoxHandler}
                   />
