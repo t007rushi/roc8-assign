@@ -53,7 +53,7 @@ const ClearFilter = () => {
   return (
     <div className="App">
       <Navbar search={search} searchHandler={searchHandler} />
-      <div className="flex gap-10">
+      <div className="flex gap-2">
         <Sidebar checkBoxHandler={checkBoxHandler} filtersArr={filtersArr} ClearFilter={ClearFilter}/>
         <Products filteredData={filteredSearchData} />
       </div>
