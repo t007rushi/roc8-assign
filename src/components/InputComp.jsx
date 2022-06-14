@@ -6,7 +6,6 @@ export const InputComp = ({ title }) => {
   return (
     <div className="flex items-center">
       <input
-        id="default-checkbox"
         type="checkbox"
         checked={filterstate.filterby.includes(title)}
         value={title}
