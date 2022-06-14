@@ -1,6 +1,8 @@
 import React from "react";
+import { useFilter } from "../context/filter-context";
 
-export const Navbar = ({ search, searchHandler }) => {
+export const Navbar = () => {
+  const {dispactherforfilter,filterstate} = useFilter();
   return (
     <nav className="flex justify-between gap-4 bg-gray-800 border-gray-200 px-2 sm:px-4 py-2.5">
       <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
@@ -30,8 +32,8 @@ export const Navbar = ({ search, searchHandler }) => {
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Search"
           required=""
-          value={search}
-          onChange={(e) => searchHandler(e.target.value)}
+          value={filterstate.search}
+          onChange={(e) => dispactherforfilter({type:"SEARCH",payload:e.target.value})}
         />
       </div>
     </nav>

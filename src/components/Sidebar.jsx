@@ -1,8 +1,10 @@
 import React from "react";
+import { useFilter } from "../context/filter-context";
 import { filters } from "../filters";
 import { InputComp } from "./InputComp";
 
-export const Sidebar = ({ checkBoxHandler, filtersArr, ClearFilter }) => {
+export const Sidebar = () => {
+  const {dispactherforfilter} = useFilter();
   return (
     <aside className="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800 w-56">
       <ul className="space-y-2">
@@ -11,7 +13,7 @@ export const Sidebar = ({ checkBoxHandler, filtersArr, ClearFilter }) => {
             <span className="ml-3 cursor-pointer">Filters</span>
           </li>
           <li className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-            <span className="ml-3 cursor-pointer p-2" onClick={ClearFilter}>
+            <span className="ml-3 cursor-pointer p-2" onClick={() => dispactherforfilter({type:"CLEAR_FILTER"})}>
               Clear
             </span>
           </li>
@@ -39,8 +41,6 @@ export const Sidebar = ({ checkBoxHandler, filtersArr, ClearFilter }) => {
                   <InputComp
                   key={title}  
                   title={title}
-                    filtersArr={filtersArr}
-                    checkBoxHandler={checkBoxHandler}
                   />
                 );
               })}
@@ -68,8 +68,6 @@ export const Sidebar = ({ checkBoxHandler, filtersArr, ClearFilter }) => {
                   <InputComp
                   key={title}  
                   title={title}
-                    filtersArr={filtersArr}
-                    checkBoxHandler={checkBoxHandler}
                   />
                 );
               })}
@@ -97,8 +95,6 @@ export const Sidebar = ({ checkBoxHandler, filtersArr, ClearFilter }) => {
                   <InputComp
                   key={title}  
                   title={title}
-                    filtersArr={filtersArr}
-                    checkBoxHandler={checkBoxHandler}
                   />
                 );
               })}
