@@ -12,8 +12,8 @@ export const Products = () => {
       : prodArr.filter(
           (prod) =>
             filterstate.filterby.includes(prod.brand) ||
-            filterstate.filterby.includes(prod.ram) ||
-            filterstate.filterby.includes(prod.cpu)
+            filterstate.filterby.includes(prod.IdealFor) ||
+            filterstate.filterby.includes(prod.size)
         );
   const filteredSearchData =
     filterstate.search.length === 0

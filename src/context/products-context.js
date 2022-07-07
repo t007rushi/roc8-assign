@@ -1,25 +1,13 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext,  useState } from "react";
+import {data} from "../data"
 
 const ProductContext = createContext(null);
 
 const ProductProvider = ({ children }) => {
-  const [prodArr, setProdArr] = useState([]);
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await fetch(
-          "https://62a717d997b6156bff8746f7.mockapi.io/products"
-        );
-        const data = await res.json();
-        setProdArr(data);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
+  const [prodArr, setProdArr] = useState(data);
 
   return (
-    <ProductContext.Provider value={{ prodArr }}>
+    <ProductContext.Provider value={{ prodArr,setProdArr }}>
       {children}
     </ProductContext.Provider>
   );

@@ -4,7 +4,7 @@ import { filters } from "../filters";
 import { InputComp } from "./InputComp";
 
 export const Sidebar = () => {
-  const {dispactherforfilter} = useFilter();
+  const { dispactherforfilter } = useFilter();
   return (
     <aside className="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800 w-56">
       <ul className="space-y-2">
@@ -13,7 +13,10 @@ export const Sidebar = () => {
             <span className="ml-3 cursor-pointer">Filters</span>
           </li>
           <li className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-            <span className="ml-3 cursor-pointer p-2" onClick={() => dispactherforfilter({type:"CLEAR_FILTERS"})}>
+            <span
+              className="ml-3 cursor-pointer p-2"
+              onClick={() => dispactherforfilter({ type: "CLEAR_FILTERS" })}
+            >
               Clear
             </span>
           </li>
@@ -36,13 +39,8 @@ export const Sidebar = () => {
           <ul id="" className="py-2 space-y-2 ml-4">
             {filters
               .filter((filt) => filt.filterType === "brands")
-              .map(({title}) => {
-                return (
-                  <InputComp
-                  key={title}  
-                  title={title}
-                  />
-                );
+              .map(({ title }) => {
+                return <InputComp key={title} title={title} />;
               })}
           </ul>
         </li>
@@ -57,19 +55,14 @@ export const Sidebar = () => {
               className="flex-1 ml-3 text-left whitespace-nowrap"
               sidebar-toggle-item=""
             >
-              CPU Type
+              SIZE
             </span>
           </button>
           <ul id="" className="py-2 space-y-2 ml-4">
             {filters
-              .filter((filt) => filt.filterType === "cpu")
-              .map(({title}) => {
-                return (
-                  <InputComp
-                  key={title}  
-                  title={title}
-                  />
-                );
+              .filter((filt) => filt.filterType === "size")
+              .map(({ title }) => {
+                return <InputComp key={title} title={title} />;
               })}
           </ul>
         </li>
@@ -84,19 +77,14 @@ export const Sidebar = () => {
               className="flex-1 ml-3 text-left whitespace-nowrap"
               sidebar-toggle-item=""
             >
-              RAM SIZE
+              IDEAL FOR
             </span>
           </button>
           <ul id="" className="py-2 space-y-2 ml-4">
             {filters
-              .filter((filt) => filt.filterType === "ram")
-              .map(({title}) => {
-                return (
-                  <InputComp
-                  key={title}  
-                  title={title}
-                  />
-                );
+              .filter((filt) => filt.filterType === "idealFor")
+              .map(({ title }) => {
+                return <InputComp key={title} title={title} />;
               })}
           </ul>
         </li>

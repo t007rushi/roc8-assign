@@ -2,16 +2,16 @@ import React from "react";
 import { useFilter } from "../context/filter-context";
 
 export const Navbar = () => {
-  const {dispactherforfilter,filterstate} = useFilter();
+  const { dispactherforfilter, filterstate } = useFilter();
   return (
-    <nav className="flex justify-between gap-4 bg-gray-800 border-gray-200 px-2 sm:px-4 py-2.5">
+    <nav className="flex justify-between gap-4 bg-blue-600 border-gray-200 px-2 sm:px-4 py-2.5">
       <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
-        AudVik LABS
+        Roc8Kart
       </span>
       <label htmlFor="simple-search" className="sr-only">
         Search
       </label>
-      <div className="relative w-full">
+      <div className="relative">
         <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
           <svg
             className="w-5 h-5 text-gray-500 dark:text-gray-400"
@@ -33,7 +33,9 @@ export const Navbar = () => {
           placeholder="Search"
           required=""
           value={filterstate.search}
-          onChange={(e) => dispactherforfilter({type:"SEARCH",payload:e.target.value})}
+          onChange={(e) =>
+            dispactherforfilter({ type: "SEARCH", payload: e.target.value })
+          }
         />
       </div>
     </nav>
